@@ -1,5 +1,5 @@
 # Digibooky by Switchfully
-(switchfully)[https://www.switchfully.com]
+[switchfully.com](https://www.switchfully.com)
 
 # Digibooky
 
