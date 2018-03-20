@@ -19,4 +19,9 @@ public class LibrarianDataBase {
     public List<Librarian> getLibrarianList() {
         return Collections.unmodifiableList(librarianList);
     }
+
+    public Librarian addLibrarian(Librarian librarian) {
+        librarianList.add(librarian);
+        return librarian;
+    }
 }

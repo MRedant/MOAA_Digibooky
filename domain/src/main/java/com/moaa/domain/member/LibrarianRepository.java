@@ -13,11 +13,11 @@ public class LibrarianRepository {
         this.librarianDataBase = librarianDataBase;
     }
 
-    public Librarian createLibrarian (){
-        return null;
+    public Librarian createLibrarian (Librarian librarian){
+        return librarianDataBase.addLibrarian(librarian);
     }
 
-    public Librarian getLibrarian (){
+    public Librarian getLibrarian (Librarian librarian){
         return null;
     }
 
