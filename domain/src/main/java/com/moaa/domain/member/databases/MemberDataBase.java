@@ -1,6 +1,7 @@
 package com.moaa.domain.member.databases;
 
 import com.moaa.domain.member.Member;
+import com.moaa.domain.member.memberInformation.Email;
 
 import javax.inject.Named;
 import java.util.ArrayList;
@@ -20,7 +21,32 @@ public class MemberDataBase {
         return Collections.unmodifiableList(memberList);
     }
 
-    public void addMember(Member member) {
+    public Member addMember(Member member) throws IllegalArgumentException {
+        if(memberListContainsInSS(member.getInss())){
+            throw new IllegalArgumentException
+                    ("User with Inss "+member.getInss()+" already in database");
+        }
+        if(memberListContainsEmail(member.getEmail())){
+            throw new IllegalArgumentException
+                    ("User with email "+member.getEmail()+" already found in database");
+        }
         memberList.add(member);
+        return member;
+    }
+
+    private boolean memberListContainsEmail(Email email) {
+        boolean containsEmail=false;
+        for (Member item:memberList) {
+            if (item.getEmail().equals(email)) {containsEmail=true;}
+        }
+        return containsEmail;
+    }
+
+    private boolean memberListContainsInSS(String inss){
+        boolean containsInss=false;
+        for (Member item:memberList) {
+            if (item.getInss().equals(inss)) {containsInss=true;}
+        }
+        return containsInss;
     }
 }
