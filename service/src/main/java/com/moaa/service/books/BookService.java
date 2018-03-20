@@ -5,6 +5,7 @@ import com.moaa.domain.books.BookRepository;
 
 import javax.inject.Inject;
 import java.util.List;
+import java.util.UUID;
 
 // adapted code from funiversity
 public class BookService {
@@ -18,5 +19,9 @@ public class BookService {
 
     public List<Book> getBooks() {
         return bookRepository.getBooks();
+    }
+
+    public String showDetailsOfBook(UUID bookId){
+        return bookRepository.showDetailsOfBook(bookId);
     }
 }
