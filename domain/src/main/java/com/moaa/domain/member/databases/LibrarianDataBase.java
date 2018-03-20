@@ -2,10 +2,12 @@ package com.moaa.domain.member.databases;
 
 import com.moaa.domain.member.Librarian;
 
+import javax.inject.Named;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
+@Named
 public class LibrarianDataBase {
 
     private List<Librarian> librarianList;

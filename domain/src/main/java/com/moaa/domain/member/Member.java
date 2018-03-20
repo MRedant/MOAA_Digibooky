@@ -65,6 +65,21 @@ public class Member {
         return cityName;
     }
 
+    @Override
+    public String toString() {
+        return "Member{" +
+                "id=" + id +
+                ", inss='" + inss + '\'' +
+                ", firstName='" + firstName + '\'' +
+                ", lastName='" + lastName + '\'' +
+                ", email=" + email +
+                ", streetName='" + streetName + '\'' +
+                ", streetNumber='" + streetNumber + '\'' +
+                ", postalCode='" + postalCode + '\'' +
+                ", cityName='" + cityName + '\'' +
+                '}';
+    }
+
     public static class MemberBuilder {
         private String inss;
         private String firstName;
@@ -125,4 +140,6 @@ public class Member {
                     , streetName, streetNumber, postalCode, cityName);
         }
     }
+
+
 }
