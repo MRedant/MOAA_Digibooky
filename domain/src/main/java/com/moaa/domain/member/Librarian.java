@@ -1,6 +1,6 @@
 package com.moaa.domain.member;
 
-import com.moaa.domain.member.memberInformation.Email;
+import com.moaa.domain.member.email.Email;
 
 import java.util.UUID;
 
