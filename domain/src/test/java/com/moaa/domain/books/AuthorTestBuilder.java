@@ -36,13 +36,4 @@ public class AuthorTestBuilder {
         this.lastName = lastName;
         return this;
     }
-
-    @Test
-    public void build_returnTheTestAuthor() {
-        assertThat(aAuthor().build().getFirstName())
-                .isEqualTo("Jan");
-        assertThat(aAuthor().build().getFirstName())
-                .isEqualTo("Janssens");
-    }
-
 }
