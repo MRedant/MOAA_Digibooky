@@ -17,13 +17,6 @@ public class BookDatabase {
 
     public BookDatabase() {
         this.books = new ArrayList<>();
-        books.add(book().withAuthor(Author.AuthorBuilder.author()
-                .withFirstName("Jan1")
-                .withLastName("Janssens1")
-                .build())
-                .withIsbn("isbn1")
-                .withTitle("title 1")
-                .build());
     }
 
     public List<Book> getBooks() {

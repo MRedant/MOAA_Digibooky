@@ -7,8 +7,6 @@ import javax.inject.Named;
 import java.util.List;
 import java.util.UUID;
 
-import static java.util.Collections.unmodifiableList;
-
 @Named
 public class BookRepository {
 
