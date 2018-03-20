@@ -2,11 +2,13 @@ package com.moaa.domain.member;
 
 import com.moaa.domain.member.databases.LibrarianDataBase;
 
+import javax.inject.Inject;
 import javax.inject.Named;
 
 @Named
 public class LibrarianRepository {
 
+    @Inject
     private LibrarianDataBase librarianDataBase;
 
     public LibrarianRepository(LibrarianDataBase librarianDataBase) {
@@ -14,18 +16,6 @@ public class LibrarianRepository {
     }
 
     public Librarian createLibrarian (Librarian librarian){
-        return librarianDataBase.addLibrarian(librarian);
-    }
-
-    public Librarian getLibrarian (Librarian librarian){
-        return null;
-    }
-
-    public Librarian updateLibrarian (){
-        return null;
-    }
-
-    public Librarian deleteLibrarian (){
-        return null;
+        return librarianDataBase.createLibrarian(librarian);
     }
 }
