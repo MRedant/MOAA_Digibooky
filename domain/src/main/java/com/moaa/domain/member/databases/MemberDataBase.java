@@ -1,7 +1,7 @@
 package com.moaa.domain.member.databases;
 
 import com.moaa.domain.member.Member;
-import com.moaa.domain.member.memberInformation.Email;
+import com.moaa.domain.member.email.Email;
 
 import javax.inject.Named;
 import java.util.ArrayList;

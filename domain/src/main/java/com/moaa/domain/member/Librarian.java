@@ -1,6 +1,6 @@
 package com.moaa.domain.member;
 
-import com.moaa.domain.member.memberInformation.Email;
+import com.moaa.domain.member.email.Email;
 
 import java.util.UUID;
 
@@ -32,6 +32,16 @@ public class Librarian {
 
     public Email getEmail() {
         return email;
+    }
+
+    @Override
+    public String toString() {
+        return "Librarian{" +
+                "id=" + id +
+                ", firstName='" + firstName + '\'' +
+                ", lastName='" + lastName + '\'' +
+                ", email=" + email +
+                '}';
     }
 
     public static class LibrarianBuilder {
