@@ -22,7 +22,7 @@ public class LibrarianRepositoryTest {
     private LibrarianRepository librarianRepository;
 
     @Test
-    public void unitTest_addLibrarian_GivenALibrarian_AddToLibrarianList() {
+    public void integrationTest_addLibrarian_GivenALibrarian_AddToLibrarianList() {
         //GIVEN
         Librarian librarian = Librarian.LibrarianBuilder.builder()
                 .withFirstName("Alex")
