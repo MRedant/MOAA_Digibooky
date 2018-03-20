@@ -20,7 +20,7 @@ public class LibrarianDataBase {
         return Collections.unmodifiableList(librarianList);
     }
 
-    public Librarian addLibrarian(Librarian librarian) {
+    public Librarian createLibrarian(Librarian librarian) {
         librarianList.add(librarian);
         return librarian;
     }
