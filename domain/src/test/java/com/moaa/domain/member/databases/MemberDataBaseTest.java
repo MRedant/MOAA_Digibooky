@@ -2,7 +2,7 @@ package com.moaa.domain.member.databases;
 
 import com.moaa.domain.member.Member;
 import com.moaa.domain.member.MemberRepository;
-import com.moaa.domain.member.utils.Email;
+import com.moaa.domain.member.memberInformation.Email;
 import org.assertj.core.api.Assertions;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -42,9 +42,7 @@ public class MemberDataBaseTest {
 
         memberRepository.createMember(member);
 
-
         //THEN
         Assertions.assertThat((memberDataBase.getMemberList()).contains(member));
-
     }
 }
