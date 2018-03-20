@@ -22,4 +22,14 @@ public class BookDatabase {
     public List<Book> getBooks() {
         return unmodifiableList(books);
     }
+
+    public Book createBook(String isbn, String title, Author author) {
+        Book book = book()
+                .withIsbn(isbn)
+                .withTitle(title)
+                .withAuthor(author)
+                .build();
+        books.add(book);
+        return book;
+    }
 }
