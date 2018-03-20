@@ -5,8 +5,7 @@ import com.moaa.domain.books.databases.BookDatabase;
 import javax.inject.Inject;
 import javax.inject.Named;
 import java.util.List;
-
-import static java.util.Collections.unmodifiableList;
+import java.util.UUID;
 
 @Named
 public class BookRepository {
@@ -15,6 +14,14 @@ public class BookRepository {
     private BookDatabase bookDatabase;
 
     public List<Book> getBooks() {
-        return unmodifiableList(bookDatabase.getBooks());
+        return bookDatabase.getBooks();
+    }
+
+    public String showDetailsOfBook(UUID bookId) {
+        return bookDatabase.getBooks().stream()
+                .filter(b->b.getId().equals(bookId))
+                .findFirst()
+                .get()
+                .toString();
     }
 }
