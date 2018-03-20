@@ -8,8 +8,6 @@ import org.springframework.test.context.junit4.SpringRunner;
 
 import javax.inject.Inject;
 
-import static com.moaa.domain.books.Author.AuthorBuilder.author;
-import static com.moaa.domain.books.Book.BookBuilder.book;
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.springframework.boot.SpringApplication.run;
 
