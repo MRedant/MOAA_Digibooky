@@ -1,7 +1,5 @@
 package com.moaa.api.member;
 
-import com.moaa.domain.member.memberInformation.Email;
-
 import java.util.UUID;
 
 public class LibrarianDTO {
