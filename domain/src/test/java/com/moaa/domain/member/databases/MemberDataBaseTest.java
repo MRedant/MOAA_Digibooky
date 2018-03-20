@@ -45,4 +45,8 @@ public class MemberDataBaseTest {
         //THEN
         Assertions.assertThat((memberDataBase.getMemberList()).contains(member));
     }
+
+    @Test
+    public void addMember() {
+    }
 }

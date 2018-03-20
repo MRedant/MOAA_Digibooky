@@ -1,11 +1,12 @@
 package com.moaa.domain.member;
 
 import com.moaa.domain.member.databases.MemberDataBase;
+import com.moaa.domain.member.email.Email;
 
 import javax.inject.Inject;
 import javax.inject.Named;
 import java.util.List;
-import java.util.UUID;
+import java.util.stream.Collectors;
 
 @Named
 public class MemberRepository {
@@ -21,15 +22,23 @@ public class MemberRepository {
         return memberDataBase.addMember(member);
     }
 
-    public List<Member> getAllMembers (){
-        return memberDataBase.getMemberList();
+    public List<Member> getAllMembersWithoutInss (){
+        return memberDataBase.getMemberList().stream()
+                .map(this::maskInss)
+                .collect(Collectors.toList());
     }
 
-    public Member updateMember (UUID memberUuid, Member newMember){
-        return null;
-    }
-
-    public Member deleteMember (){
-        return null;
+    private Member maskInss(Member member){
+        Member returnMember = Member.MemberBuilder.buildMember()
+                .withFirstName(member.getFirstName())
+                .withLastName(member.getLastName())
+                .withStreetName(member.getStreetName())
+                .withStreetNumber(member.getStreetNumber())
+                .withCityName(member.getCityName())
+                .withPostalCode(member.getPostalCode())
+                .withEmail(member.getEmail())
+                .withInss("**Masked**")
+                .build();
+        return returnMember.setId(member.getId());
     }
 }
