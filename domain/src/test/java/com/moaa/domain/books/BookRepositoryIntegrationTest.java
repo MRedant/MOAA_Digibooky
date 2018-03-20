@@ -57,6 +57,11 @@ public class BookRepositoryIntegrationTest {
     }
 
     @Test
+    public void createBook_givenAnIsbnAndATitleAndAnAuthor_thenCreateTheBookAndReturnTheBook() {
+
+    }
+
+    @Test
     public void showDetailsOfBook_givenAPresentBookId_thenReturnTheDetailsOfTheBook() {
         List<Book> listOfBooksInDatabase = populateBookDatabase();
         Book expectedBook = listOfBooksInDatabase.get(0);
