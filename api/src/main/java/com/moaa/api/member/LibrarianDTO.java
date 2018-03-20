@@ -1,16 +1,21 @@
 package com.moaa.api.member;
 
-import java.util.UUID;
+import com.moaa.domain.member.Librarian;
 
 public class LibrarianDTO {
 
-    private UUID id;
+    private Integer id;
     private String firstName;
     private String lastName;
     private String email;
 
     public static LibrarianDTO librarianDTO(){
         return new LibrarianDTO();
+    }
+
+    public LibrarianDTO withId(Integer id){
+        this.id = id;
+        return this;
     }
 
     public LibrarianDTO withFirstname(String firstName){
@@ -23,7 +28,12 @@ public class LibrarianDTO {
         return this;
     }
 
-    public UUID getId() {
+    public LibrarianDTO withEmail(String email){
+        this.email = email;
+        return this;
+    }
+
+    public Integer getId() {
         return id;
     }
 
@@ -33,5 +43,9 @@ public class LibrarianDTO {
 
     public String getLastName() {
         return lastName;
+    }
+
+    public String getEmail() {
+        return email;
     }
 }
