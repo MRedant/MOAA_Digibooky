@@ -57,20 +57,30 @@ public class BookRepositoryIntegrationTest {
     }
 
     @Test
-    public void createBook_givenAnIsbnAndATitleAndAnAuthor_thenCreateTheBookAndReturnTheBook() {
-
+    public void createBook_givenAnIsbnAndATitleAndAnAuthor_thenAddTheBookToTheDatabaseAndReturnTheBook() {
+        Book book = bookRepository.createBook("isbn1", "title 1", Author.AuthorBuilder.author()
+                                                                .withFirstName("Jan1")
+                                                                .withLastName("Janssens1")
+                                                                .build());
+        assertThat(bookRepository.getBooks())
+                .containsExactly(book);
     }
 
-    @Test
+    /*@Test
     public void showDetailsOfBook_givenAPresentBookId_thenReturnTheDetailsOfTheBook() {
-        List<Book> listOfBooksInDatabase = populateBookDatabase();
-        Book expectedBook = listOfBooksInDatabase.get(0);
-        String expectedDetailsOfBook = expectedBook.getIsbn() + "\n" + expectedBook.getTitle() + "\n" +
-                expectedBook.getAuthor().getFirstName() + " " + expectedBook.getAuthor().getLastName();
+        Book book = book().withAuthor(Author.AuthorBuilder.author()
+                .withFirstName("Jan1")
+                .withLastName("Janssens1")
+                .build())
+                .withIsbn("isbn1")
+                .withTitle("title 1")
+                .build();
+        String expectedDetailsOfBook = book.getIsbn() + "\n" + book.getTitle() + "\n" +
+                book.getAuthor().getFirstName() + " " + book.getAuthor().getLastName();
         String actualDetailsOfBook = bookRepository.showDetailsOfBook(listOfBooksInDatabase.get(0).getId());
         assertThat(actualDetailsOfBook)
                 .isEqualTo(expectedDetailsOfBook);
-    }
+    }*/
 
     /*@Test
     public void showDetailsOfBook_givenAPresentBookId_thenReturnTheDetailsOfTheBook() {

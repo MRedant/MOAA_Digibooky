@@ -1,7 +1,7 @@
 package com.moaa.domain.member;
 
 import com.moaa.domain.member.databases.LibrarianDataBase;
-import com.moaa.domain.member.memberInformation.Email;
+import com.moaa.domain.member.email.Email;
 import org.assertj.core.api.Assertions;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -11,8 +11,6 @@ import org.mockito.Mockito;
 import org.mockito.junit.MockitoJUnitRunner;
 
 import java.util.Arrays;
-
-import static org.junit.Assert.*;
 
 @RunWith(MockitoJUnitRunner.class)
 public class LibrarianRepositoryTest {
