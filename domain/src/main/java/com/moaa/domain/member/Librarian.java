@@ -53,17 +53,17 @@ public class Librarian {
         return new LibrarianBuilder();
         }
 
-        public LibrarianBuilder setFirstName(String firstName) {
+        public LibrarianBuilder withFirstName(String firstName) {
             this.firstName = firstName;
             return this;
         }
 
-        public LibrarianBuilder setLastName(String lastName) {
+        public LibrarianBuilder withLastName(String lastName) {
             this.lastName = lastName;
             return this;
         }
 
-        public LibrarianBuilder setEmail(Email email) {
+        public LibrarianBuilder withEmail(Email email) {
             this.email = email;
             return this;
         }
