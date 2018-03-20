@@ -2,18 +2,19 @@ package com.moaa.domain.books.databases;
 
 import com.moaa.domain.books.Book;
 
+import javax.inject.Named;
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
 
 import static java.util.Collections.unmodifiableList;
 
+@Named
 public class BookDatabase {
 
-    List<Book> books;
+    private List<Book> books;
 
     public BookDatabase() {
-        books = new ArrayList<>();
+        this.books = new ArrayList<>();
     }
 
     public List<Book> getBooks() {

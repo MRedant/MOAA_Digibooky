@@ -46,6 +46,11 @@ public class Book {
     }
 
     @Override
+    public String toString() {
+        return isbn + "\n" + title + "\n" + author.getFirstName() + " " + author.getLastName();
+    }
+
+    @Override
     public int hashCode() { return Objects.hash(id, title, author, isbn); }
 
     public static class BookBuilder {

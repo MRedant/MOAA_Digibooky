@@ -49,7 +49,7 @@ public class BookRepositoryTest {
                         .withTitle("title 3")
                         .build()
         ));
-        Mockito.when(bookRepository.getBooks())
+        Mockito.when(bookDatabase.getBooks())
                 .thenReturn(expectedBooks);
 
         List<Book> actualBooks = bookRepository.getBooks();
