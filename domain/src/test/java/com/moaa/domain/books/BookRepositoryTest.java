@@ -75,4 +75,17 @@ public class BookRepositoryTest {
                 .isEqualTo(expectedDetailsOfBook);
     }
 
+    @Test
+    public void showDetailsOfBook_givenANonPresentBookId_thenReturnTheDetailsOfTheBook() {
+        List<Book> listOfBooksInDatabase = populateBookDatabase();
+        Mockito.when(bookDatabase.getBooks())
+                .thenReturn(listOfBooksInDatabase);
+        Book expectedBook = listOfBooksInDatabase.get(0);
+        String expectedDetailsOfBook = expectedBook.getIsbn() + "\n" + expectedBook.getTitle() + "\n" +
+                expectedBook.getAuthor().getFirstName() + " " + expectedBook.getAuthor().getLastName();
+        String actualDetailsOfBook = bookRepository.showDetailsOfBook(listOfBooksInDatabase.get(0).getId());
+        assertThat(actualDetailsOfBook)
+                .isEqualTo(expectedDetailsOfBook);
+    }
+
 }
