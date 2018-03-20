@@ -34,6 +34,16 @@ public class Librarian {
         return email;
     }
 
+    @Override
+    public String toString() {
+        return "Librarian{" +
+                "id=" + id +
+                ", firstName='" + firstName + '\'' +
+                ", lastName='" + lastName + '\'' +
+                ", email=" + email +
+                '}';
+    }
+
     public static class LibrarianBuilder {
         private String firstName;
         private String lastName;
