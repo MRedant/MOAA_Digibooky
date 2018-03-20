@@ -51,17 +51,11 @@ public class BookRepositoryIntegrationTest {
     }
 
     @Test
-    public void getBooks() {
-        assertThat(bookRepository.getBooks())
-                .isEmpty();
-    }
-
-    @Test
     public void createBook_givenAnIsbnAndATitleAndAnAuthor_thenAddTheBookToTheDatabaseAndReturnTheBook() {
         Book book = bookRepository.createBook("isbn1", "title 1", Author.AuthorBuilder.author()
-                                                                .withFirstName("Jan1")
-                                                                .withLastName("Janssens1")
-                                                                .build());
+                .withFirstName("Jan1")
+                .withLastName("Janssens1")
+                .build());
         assertThat(bookRepository.getBooks())
                 .containsExactly(book);
     }
