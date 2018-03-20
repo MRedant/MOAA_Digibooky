@@ -1,4 +1,4 @@
-package com.moaa.domain.member.utils;
+package com.moaa.domain.member.memberInformation;
 
 public class Email {
 
