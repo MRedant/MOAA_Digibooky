@@ -16,7 +16,7 @@ public class BookRepository {
     private BookDatabase bookDatabase;
 
     public List<Book> getBooks() {
-        return unmodifiableList(bookDatabase.getBooks());
+        return bookDatabase.getBooks();
     }
 
     public String showDetailsOfBook(UUID bookId) {
