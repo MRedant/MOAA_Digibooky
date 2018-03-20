@@ -4,6 +4,8 @@ import com.moaa.domain.member.databases.MemberDataBase;
 
 import javax.inject.Inject;
 import javax.inject.Named;
+import java.util.List;
+import java.util.UUID;
 
 @Named
 public class MemberRepository {
@@ -16,15 +18,14 @@ public class MemberRepository {
     }
 
     public Member createMember (Member member){
-        memberDataBase.addMember(member);
-        return member;
+        return memberDataBase.addMember(member);
     }
 
-    public Member getMember (){
-        return null;
+    public List<Member> getAllMembers (){
+        return memberDataBase.getMemberList();
     }
 
-    public Member updateMember (){
+    public Member updateMember (UUID memberUuid, Member newMember){
         return null;
     }
 
